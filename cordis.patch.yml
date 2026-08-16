@@ -1,0 +1,4 @@
+# Mount skill-manager plugin into DeepSeek Harness profile
+- insert:
+    - id: skill-manager
+      name: dsh-skill-manager
