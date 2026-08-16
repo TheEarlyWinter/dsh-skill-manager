@@ -1,0 +1,45 @@
+{
+  "name": "dsh-skill-manager",
+  "description": "Skill package and bundle manager for DeepSeek Harness (DSH) Web GUI",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheEarlyWinter/dsh-skill-manager.git"
+  },
+  "homepage": "https://github.com/TheEarlyWinter/dsh-skill-manager#readme",
+  "bugs": "https://github.com/TheEarlyWinter/dsh-skill-manager/issues",
+  "keywords": [
+    "deepseek",
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "skill-manager"
+  ],
+  "files": [
+    "lib/",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-runtime",
+        "@deepseek-ai/dsh-client-ui-primitives"
+      ]
+    }
+  },
+  "license": "MIT"
+}
